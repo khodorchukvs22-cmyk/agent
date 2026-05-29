@@ -349,7 +349,7 @@ async function sendMsg(text) {
   loading = true;
 
   try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
+    const res = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'x-api-key': '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', 'anthropic-version': '2023-06-01', 'x-api-key': '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', 'anthropic-version': '2023-06-01' },
       body: JSON.stringify({

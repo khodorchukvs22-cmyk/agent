@@ -356,7 +356,7 @@ async function sendMsg(text) {
         model: 'claude-sonnet-4-20250514',
         max_tokens: 4000,
         system: SYSTEM,
-        messages: messages.map(m => ({ role: m.role, content: m.content }))
+        messages: [{role: 'system', content: SYSTEM}, ...messages.map(m => ({ role: m.role, content: m.content }))]
       })
     });
     const data = await res.json();
